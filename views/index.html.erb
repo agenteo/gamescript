@@ -1,0 +1,38 @@
+<!doctype html>
+<buttonhtml lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Game console</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="codemirror/codemirror.css" />
+    <script src="codemirror/codemirror.js"></script>
+    <script src="codemirror/javascript.js"></script>
+
+  </head>
+
+  <body>
+
+    <h2>Game configuration</h2>
+    <form action='/' method='post'>
+      <fieldset>
+        <textarea name='logic' id='gameConfiguration'>
+          {
+            "gameMode": "startGame",
+            "frameRate": 30
+          }
+        </textarea>
+        </br>
+        <button class='btn btn-primary'>Validate configuration</button>
+      </fieldset>
+    </form>
+  </body>
+
+    <script>
+      var gameConfiguration = document.getElementById("gameConfiguration");
+      var editor = CodeMirror.fromTextArea(gameConfiguration, {
+        mode: "javascript",
+        lineNumbers: true
+      });
+    </script>
+</html>
